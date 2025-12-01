@@ -1,0 +1,19 @@
+\beamer@sectionintoc {1}{Presentation Outline}{2}{0}{1}
+\beamer@sectionintoc {2}{Background}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Magic State Distillation Overview}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{Transversal Gates}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{CSS Codes}{7}{0}{2}
+\beamer@subsectionintoc {2}{4}{Self-Dual Codes}{8}{0}{2}
+\beamer@subsectionintoc {2}{5}{Doubled QR Codes}{9}{0}{2}
+\beamer@subsectionintoc {2}{6}{Distillation Protocol}{10}{0}{2}
+\beamer@sectionintoc {3}{Motivation and Approach}{11}{0}{3}
+\beamer@subsectionintoc {3}{1}{Yield}{12}{0}{3}
+\beamer@subsectionintoc {3}{2}{Scaling}{13}{0}{3}
+\beamer@subsectionintoc {3}{3}{Methodology}{14}{0}{3}
+\beamer@subsectionintoc {3}{4}{Hypothesis}{15}{0}{3}
+\beamer@sectionintoc {4}{Simulation}{16}{0}{4}
+\beamer@subsectionintoc {4}{1}{Algorithm}{17}{0}{4}
+\beamer@subsectionintoc {4}{2}{Results}{18}{0}{4}
+\beamer@subsectionintoc {4}{3}{Analysis}{19}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{20}{0}{5}
+\beamer@sectionintoc {6}{Potential Future Work}{22}{0}{6}

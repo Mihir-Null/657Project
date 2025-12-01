@@ -1,9 +1,12 @@
 \documentclass[aspectratio=169]{beamer}
 \usetheme{metropolis}
 
-\title{Magic State Distillation Study}
+\setbeamertemplate{section in toc}{\textbullet\ \inserttocsection}
+\setbeamertemplate{subsection in toc}{\hspace*{1.5em}\parbox[t]{0.75\textwidth}{\raggedright\footnotesize\textendash\ \inserttocsubsection}}
+
+\title{Magic State Distillation From Quadratic Residue based CSS codes}
 \subtitle{Placeholder Subtitle}
-\author{Your Name}
+\author{Mihir Talati, Leonardo S.P Velloso}
 \date{\today}
 
 \begin{document}
@@ -12,10 +15,15 @@
 
 \section{Presentation Outline}
 \begin{frame}{Presentation Outline}
-  \tableofcontents
+  \begin{columns}[t,onlytextwidth]
+    \column{0.48\textwidth}
+      \tableofcontents[sections={2-3},subsectionstyle=show/show,subsubsectionstyle=hide]
+    \column{0.48\textwidth}
+      \tableofcontents[sections={4-6},subsectionstyle=show/show,subsubsectionstyle=hide]
+  \end{columns}
 \end{frame}
 
-\section{Introduction}
+\section{Background}
 \subsection{Magic State Distillation Overview}
 \begin{frame}{Magic State Distillation Overview}
   \begin{itemize}
@@ -24,7 +32,7 @@
   \end{itemize}
 \end{frame}
 
-\subsection{Transversal Gatesets Background}
+\subsection{Transversal Gates}
 \begin{frame}{Transversal Gatesets Background}
   \begin{itemize}
     \item Placeholder summary of transversal gate properties and their role in error mitigation.
@@ -32,16 +40,7 @@
   \end{itemize}
 \end{frame}
 
-\section{Background}
-\subsection{Stabilizer Formalization}
-\begin{frame}{Stabilizer Formalization}
-  \begin{itemize}
-    \item Placeholder description of stabilizer state notation and generators.
-    \item Brief reminder of how stabilizers define code spaces.
-  \end{itemize}
-\end{frame}
-
-\subsection{CSS Code Formalization}
+\subsection{CSS Codes}
 \begin{frame}{CSS Code Formalization}
   \begin{itemize}
     \item Placeholder notes on constructing CSS codes from classical linear codes.
@@ -57,8 +56,7 @@
   \end{itemize}
 \end{frame}
 
-\section{Overview of Selected Code Family}
-\subsection{Code Structure and Construction}
+\subsection{Doubled QR Codes}
 \begin{frame}{Code Structure and Construction}
   \begin{itemize}
     \item Placeholder summary of the code family described in \texttt{https://arxiv.org/pdf/2408.12752}.
@@ -66,41 +64,24 @@
   \end{itemize}
 \end{frame}
 
-\section{Distillation Protocols}
-\begin{frame}{Distillation Protocols}
+\subsection{Distillation Protocol}
+\begin{frame}{Bravyi-Haah Magic State Distillation}
   \begin{itemize}
     \item Placeholder outline of the protocols evaluated with the selected codes.
     \item Notes on assumptions, inputs, and targeted logical states.
   \end{itemize}
 \end{frame}
 
-\section{Analysis of Selected Protocols}
-\subsection{Bravyi-Haah Protocol}
-\begin{frame}{Bravyi-Haah Protocol}
-  \begin{itemize}
-    \item Placeholder recap of triorthogonal code requirements and procedure.
-    \item Points to connect the protocol to the chosen code family.
-  \end{itemize}
-\end{frame}
-
-\subsection{Protocol Modifications}
-\begin{frame}{Slight Modifications}
-  \begin{itemize}
-    \item Placeholder list of tweaks made to the standard protocol.
-    \item Rationale for modifications and anticipated impact on performance.
-  \end{itemize}
-\end{frame}
-
-\section{Distillation Results and Yield}
-\subsection{Definition}
-\begin{frame}{Distillation Yield Definition}
+\section{Motivation and Approach}
+\subsection{Yield}
+\begin{frame}{Distillation Yield}
   \begin{itemize}
     \item Placeholder definition of yield metrics used for comparison.
     \item Clarify normalization and resource accounting assumptions.
   \end{itemize}
 \end{frame}
 
-\subsection{Scaling With Code Length}
+\subsection{Scaling}
 \begin{frame}{Scaling With Code Length}
   \begin{itemize}
     \item Placeholder observations on how yield changes with increasing code size.
@@ -108,16 +89,40 @@
   \end{itemize}
 \end{frame}
 
-\section{Simulation Results}
-\subsection{Simulation Process}
-\begin{frame}{Simulation Process}
+\subsection{Methodology}
+\begin{frame}{Bravyi-Haah Protocol for TE* and triorthogonal codes}
+  \begin{itemize}
+    \item Placeholder recap of triorthogonal code requirements and procedure.
+    \item Points to connect the protocol to the chosen code family.
+  \end{itemize}
+\end{frame}
+
+\subsection{Hypothesis}
+\begin{frame}{Hypothesis}
+  \begin{itemize}
+    \item Placeholder list of tweaks made to the standard protocol.
+    \item Rationale for modifications and anticipated impact on performance.
+  \end{itemize}
+\end{frame}
+
+\section{Simulation}
+\subsection{Algorithm}
+\begin{frame}{Algorithm Overview}
   \begin{itemize}
     \item Placeholder description of the simulation setup and noise models.
     \item Mention computational tools or libraries anticipated for the study.
   \end{itemize}
 \end{frame}
 
-\subsection{Contextualizing Results}
+\subsection{Results}
+\begin{frame}{Pretty Graphs}
+  \begin{itemize}
+    \item Placeholder description of the simulation setup and noise models.
+    \item Mention computational tools or libraries anticipated for the study.
+  \end{itemize}
+\end{frame}
+
+\subsection{Analysis}
 \begin{frame}{Contextualizing Results}
   \begin{itemize}
     \item Placeholder interpretation of simulated performance metrics.
@@ -126,32 +131,15 @@
 \end{frame}
 
 \section{Conclusion}
-\subsection{Initial Hypothesis}
-\begin{frame}{Initial Hypothesis}
+\begin{frame}{HYpothesis vs Results}
   \begin{itemize}
     \item Placeholder statement of the working hypothesis before analysis.
     \item Criteria used to judge success or failure.
   \end{itemize}
 \end{frame}
 
-\subsection{Comparison With Results}
-\begin{frame}{Comparison With Results}
-  \begin{itemize}
-    \item Placeholder notes contrasting the hypothesis with observed outcomes.
-    \item Emphasize agreements, surprises, and unresolved questions.
-  \end{itemize}
-\end{frame}
-
-\subsection{Outcome Analysis}
-\begin{frame}{Outcome Analysis}
-  \begin{itemize}
-    \item Placeholder summary of key lessons learned from the study.
-    \item Observations about robustness, efficiency, and practicality.
-  \end{itemize}
-\end{frame}
-
-\subsection{Potential Future Work}
-\begin{frame}{Potential Future Work}
+\section{Potential Future Work}
+\begin{frame}{What's next?}
   \begin{itemize}
     \item Placeholder list of follow-up experiments and protocol refinements.
     \item Suggestions for code design or distillation strategy improvements.
