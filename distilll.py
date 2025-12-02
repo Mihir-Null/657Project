@@ -26,3 +26,10 @@ for w in range(1, w_max+1):
                     A_wmin += 1
     if found_this_weight:
         break
+
+
+# for small p distilled states = approx A * p ^ (wmin)
+# do same for undetected errors (both harmful and not) -> get approximate s(p) then yield per code is about s(p)/n
+
+# might need to run several times since this is approx
+# exact syndromes blow up as 2^n
