@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1764631336.71201 "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" "presentation.pdf" "presentation" 1764631337.67377 0
-  "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" 1764631335.67426 5009 14a0b092454e03fdd7554f3e874d63a2 ""
+["pdflatex"] 1764633850.26577 "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" "presentation.pdf" "presentation" 1764633851.30149 0
+  "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" 1764633849.16871 5009 14a0b092454e03fdd7554f3e874d63a2 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1755987285 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1755987285 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1755987285 1004 54797486969f23fa377b128694d548df ""
@@ -213,11 +213,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763442072 5306876 69c328245ae101f6bc10b01e1f2bf9d5 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763442144 2686926 77f27ce2a5465d02a063903ca7e78838 ""
-  "presentation.aux" 1764631337.62509 8214 534f12defe13c6f2eb0693143d54285b "pdflatex"
-  "presentation.nav" 1764631337.62631 4963 7857c09ca8ec61ed8cbe82249d9ff931 "pdflatex"
-  "presentation.out" 1764631337.62595 2369 423a5a638debd3966a52488a3c529438 "pdflatex"
-  "presentation.tex" 1764631335.67426 5009 14a0b092454e03fdd7554f3e874d63a2 ""
-  "presentation.toc" 1764631337.62635 1036 433075850a13b7c005f073365109748d "pdflatex"
+  "presentation.aux" 1764633851.23873 8214 534f12defe13c6f2eb0693143d54285b "pdflatex"
+  "presentation.nav" 1764633851.24014 4963 7857c09ca8ec61ed8cbe82249d9ff931 "pdflatex"
+  "presentation.out" 1764633851.23968 2369 423a5a638debd3966a52488a3c529438 "pdflatex"
+  "presentation.tex" 1764633849.16871 5009 14a0b092454e03fdd7554f3e874d63a2 ""
+  "presentation.toc" 1764633851.24024 1036 433075850a13b7c005f073365109748d "pdflatex"
   (generated)
   "presentation.aux"
   "presentation.log"
