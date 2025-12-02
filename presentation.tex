@@ -27,50 +27,108 @@
 \subsection{Magic State Distillation Overview}
 \begin{frame}{Magic State Distillation Overview}
   \begin{itemize}
-    \item Placeholder overview of why magic state distillation is required for fault-tolerant quantum computing.
-    \item Outline key challenges addressed by distillation in this study.
+    \item Fault-Tolerant QC: In many stabilizer codes, Clifford gates are transversal while $T$ is not
+    \item Applying $T \longrightarrow$ spreads error $\longrightarrow$ \textbf{NOT FAULT-TOLERANT} 
+    \item Motivation:
+    \begin{enumerate}[i)]
+        \item Universal Gate Set $\longrightarrow$ we want "net effect" of a $T$ gate without actually using it
+        \item Magic state distillation is the process of "refining" imperfect magic states 
+        \item Sequence of Pauli measurements and Clifford group operations generate less, but better magic states
+    \item Higher fidelity
+    \end{enumerate}
   \end{itemize}
 \end{frame}
 
 \subsection{Transversal Gates}
 \begin{frame}{Transversal Gatesets Background}
-  \begin{itemize}
-    \item Placeholder summary of transversal gate properties and their role in error mitigation.
-    \item Notes on constraints imposed by transversal operations on encoded logical gates.
-  \end{itemize}
+\begin{block}{Transversal Gate} \vspace{1pt}
+A quantum operation $\mathcal{F}$ acting on $m$ blocks ($n$ qubits per block) is called transversal if it can be written as a tensor product of gates $G_i$, i.e 
+$$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
+    \item $G_i$ acts on the $i^{th}$ qubit of each block
+    \item ${G_i}$ acts on an $m$-qubit space (one qubit from each of the $m$ blocks)
+    \item No $G_i$ ever touches more than one qubit in the same block
+\end{itemize}
+\end{block}
 \end{frame}
 
-\subsection{CSS Codes}
+\begin{frame}{Transversal Gatesets Background}
+    \begin{itemize}
+        \item Properties for Fault-Tolerant Quantum Computing:
+        \begin{enumerate}[i)]
+            \item GPP -- Applying gate  avoids error blow-up inside the block
+            \item GCP -- makes the codes' correctable errors behave nicely through the gate
+        \end{enumerate}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}{Constraints Imposed by Transversal Gates}
+\begin{itemize}
+    \item \textbf{Eastin--Knill Theorem:}  
+    No QECC can realize a universal gate set using only transversal gates.
+    \item Transversal gates preserve the structure of stabilizer codes:
+    they map Pauli errors to Pauli errors (GCP).
+    \item Logical gates implementable transversally are restricted to a 
+    \textbf{finite subgroup} of the Clifford hierarchy.
+    \item Non-Clifford logical gates (e.g.\ $T$) cannot be implemented
+    transversally in standard codes $\Rightarrow$ need magic states.
+\end{itemize}
+\end{frame}
+
+
 \begin{frame}{CSS Code Formalization}
   \begin{itemize}
-    \item Placeholder notes on constructing CSS codes from classical linear codes.
-    \item Mention error detection and correction properties relevant to distillation.
+    \item Built from two classical linear codes 
+      $$C_Z \subset C_X \subset \{0,1\}^n.$$
+    \item Encodes $k = \dim(C_X)-\dim(C_Z)$ logical qubits into $n$ physical qubits.
+    \item Logical basis states are uniform superpositions over cosets: 
+      $$|x + C_Z\rangle.$$
+    \item Error structure splits cleanly through stabilizers:
+      \begin{itemize}
+        \item $C_Z$ corrects bit-flip (X) errors
+        \item $C_X$corrects phase-flip (Z) errors
+      \end{itemize}
+    \item Useful in distillation: Pauli-type noise handled independently, supports some Clifford Gates
   \end{itemize}
 \end{frame}
 
 \subsection{Self-Dual Codes}
 \begin{frame}{Self-Dual Codes}
   \begin{itemize}
-    \item Placeholder explanation of self-duality criteria in the CSS setting.
-    \item Comments on why self-dual structures matter for transversal gate compatibility.
+    \item A CSS code is \textbf{self-dual} if its classical code satisfies 
+      $$C = C^\perp$$
+    \item Then the $X$ and $Z$-stabilizers come from the same linear code
+    \item This creates strong X/Z symmetry in the error structure
+    \item Such symmetry allows more Clifford gates to be transversal (e.g., $H$, sometimes CNOT), which is useful for distillation
   \end{itemize}
 \end{frame}
-
 \subsection{Doubled QR Codes}
-\begin{frame}{Code Structure and Construction}
+\begin{frame}{Doubled QR Codes: Construction Summary}
   \begin{itemize}
-    \item Placeholder summary of the code family described in \texttt{https://arxiv.org/pdf/2408.12752}.
-    \item Highlight key construction steps and parameters to emphasize during the talk.
+    \item Begin with two ingredients:
+    \begin{itemize}
+        \item a \textbf{self-dual, doubly-even} (Hamming weight is multiple of 4) CSS code (gives X/Z symmetry and transversal Cliffords)
+        \item a \textbf{QR-derived doubly-even} CSS code (provides high distance)
+    \end{itemize}
+    \item Apply a \textbf{doubling map} to combine these two codes
+    \item The resulting code is \textbf{weakly triply-even} (mulitple of 8), enabling a transversal logical $T$ gate.
+    \item Final product: a family of $[n,1,d]$ codes with high distance and lower qubit overhead for transversal Clifford and $T$
+  \end{itemize}
+  \end{frame}
+  \begin{frame}{Codes Diagram}
+      \begin{center}\includegraphics[scale = .4]{Screenshot 2025-12-02 at 13.23.20.png}\end{center}
+  \end{frame}
+\subsection{Distillation Protocol}
+\begin{frame}{Bravyi--Haah Magic State Distillation}
+  \begin{itemize}
+    \item Uses \textbf{triorthogonal} (or weakly triply-even) CSS codes to distill high-fidelity $|T\rangle$ magic states
+    \item Input: multiple noisy copies of $|T\rangle$ with physical error rate $p$
+    \item Protocol applies only \textbf{Clifford operations} and \textbf{Pauli measurements} on the encoded blocks
+    \item Output: a smaller number of magic states with error rate suppressed to $O(p^k)$ where $k$ depends on the code (Bravyi--Haah has $k \ge 3$)
+    \item Assumptions: transversal Clifford gates available; code satisfies triorthogonality (or weak triply-even structure) for logical $T$
+    \item Target: preparation of high-fidelity logical $|T\rangle$ states for universal FTQC.
   \end{itemize}
 \end{frame}
 
-\subsection{Distillation Protocol}
-\begin{frame}{Bravyi-Haah Magic State Distillation}
-  \begin{itemize}
-    \item Placeholder outline of the protocols evaluated with the selected codes.
-    \item Notes on assumptions, inputs, and targeted logical states.
-  \end{itemize}
-\end{frame}
 
 \section{Motivation and Approach}
 \subsection{Yield}
