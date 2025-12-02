@@ -115,7 +115,8 @@ $$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
   \end{itemize}
   \end{frame}
   \begin{frame}{Codes Diagram}
-      \begin{center}\includegraphics[scale = .4]{Screenshot 2025-12-02 at 13.23.20.png}\end{center}
+      %\begin{center}\includegraphics[scale = .4]{Screenshot 2025-12-02 at 13.23.20.png}%\end{center}
+      %% Leo, the screenshot needs to be uploaded in the folder
   \end{frame}
 \subsection{Distillation Protocol}
 \begin{frame}{Bravyi--Haah Magic State Distillation}
@@ -131,44 +132,121 @@ $$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
 
 
 \section{Motivation and Approach}
-\subsection{Yield}
-\begin{frame}{Distillation Yield}
-  \begin{itemize}
-    \item Placeholder definition of yield metrics used for comparison.
-    \item Clarify normalization and resource accounting assumptions.
-  \end{itemize}
-\end{frame}
-
-\subsection{Scaling}
-\begin{frame}{Scaling With Code Length}
-  \begin{itemize}
-    \item Placeholder observations on how yield changes with increasing code size.
-    \item Notes on asymptotic behavior and finite-size considerations.
-  \end{itemize}
-\end{frame}
 
 \subsection{Methodology}
 \begin{frame}{Bravyi-Haah Protocol for TE* and triorthogonal codes}
   \begin{itemize}
-    \item Placeholder recap of triorthogonal code requirements and procedure.
-    \item Points to connect the protocol to the chosen code family.
+    \item Same BH protocol applied to each specific QR-based TE* code.
+    \item Inputs:
+      \begin{itemize}
+        \item $H_X$ matrix (rows = X stabilizers),
+        \item Logical-$Z$ vector $z_{\text{log}}$,
+        \item Physical error rate $p$ on each T-state,
+        \item Noise model: i.i.d.\ Z noise for magic state injection.
+      \end{itemize}
+    \item For each code:
+      \[
+      s(p) = \Pr[H_X e^T = 0], \qquad
+      p_{\text{out}}(p) = \Pr[z_{\text{log}}\cdot e = 1 \mid \text{accepted}]
+      \]
+    \item We compute these numerically per-block.
   \end{itemize}
 \end{frame}
 
 \subsection{Hypothesis}
 \begin{frame}{Hypothesis}
   \begin{itemize}
-    \item Placeholder list of tweaks made to the standard protocol.
-    \item Rationale for modifications and anticipated impact on performance.
+    \item TE* / QR-based codes have \textbf{better finite-size overhead} than:
+      \begin{itemize}
+        \item Standard BH triorthogonal codes,
+        \item Generic doubled self-dual codes.
+      \end{itemize}
+    \item Due to:
+      \begin{itemize}
+        \item High distances at small $n$,
+        \item Structure inherited from QR code weight distributions,
+        \item Particularly low-weight X-checks satisfying mod-8 conditions.
+      \end{itemize}
+    \item Anticipated result:
+      \begin{itemize}
+        \item Better yield/overhead for $n \lesssim 30 \to 100$ (depending on how many we can simulate),
+        \item But asymptotic exponent still $\gamma \to 2$.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsection{Yield}
+\begin{frame}{Distillation Yield}
+  \begin{itemize}
+    \item Yield quantifies “magic states out per magic state in”:
+      \[
+      Y(p) = \frac{k \cdot s(p)}{n}
+      \]
+    \item For Jain–Albert codes:
+      \begin{itemize}
+        \item Typically $k=1$ so $Y = s(p)/n$.
+        \item Small and medium $n$ have surprisingly high yields due to small block sizes.
+      \end{itemize}
+    \item Comparison baseline:
+      \begin{itemize}
+        \item Bravyi–Haah triorthogonal families ($n = 3k + 8$),
+        \item Self-dual doubled families used in prior constructions.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\subsection{Scaling}
+\begin{frame}{Scaling With Code Length}
+  \begin{itemize}
+    \item Key theoretical fact from Jain–Albert:
+      \[
+      d(n) \approx \Theta(\sqrt{n})
+      \]
+      for both TE* and triorthogonal families constructed.
+    \item For a BH-style distillation:
+      \[
+      p_{\text{out}}(p) \sim C p^\alpha, \quad \alpha \approx d_Z
+      \]
+      where $d_Z$ = minimum weight undetected Z logical error.
+    \item Thus,
+      \[
+      \alpha(n) \approx \Theta(\sqrt{n})
+      \]
+    \item But:
+      \[
+      \gamma_n = \log_\alpha(n/k) \to 2
+      \]
+      meaning asymptotically the codes do not beat BH’s $1.585$ exponent.
+    \item However: \textbf{finite-size performance may be significantly better}.
   \end{itemize}
 \end{frame}
 
 \section{Simulation}
 \subsection{Algorithm}
-\begin{frame}{Algorithm Overview}
+\begin{frame}{Algorithm Overview \; [WIP]}
   \begin{itemize}
-    \item Placeholder description of the simulation setup and noise models.
-    \item Mention computational tools or libraries anticipated for the study.
+    \item For each code:
+      \begin{enumerate}
+        \item Import $H_X$ and logical-$Z$.
+        \item Sample error patterns $e \sim \text{Bernoulli}(p)^n$.
+        \item Check acceptance: $H_X e^T = 0$.
+        \item For accepted blocks, compute logical parity $z_{\text{log}}\cdot e$.
+      \end{enumerate}
+    \item Metrics:
+      \[
+      s(p) = \frac{\text{accepted}}{N},
+      \quad 
+      p_{\text{out}}(p) = \frac{\text{harmful and accepted}}{\text{accepted}},
+      \quad 
+      Y = \frac{s(p)}{n}
+      \]
+    \item $Y$ is a proxy for approximate per code distillation yield
+
+    \item Complexity:
+      \begin{itemize}
+        \item Monte Carlo: $O(Nrn)$ for $r$ stabilizers.
+        \item Exhaustive enumeration for small $n$ to compute $\alpha$ exactly.
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
