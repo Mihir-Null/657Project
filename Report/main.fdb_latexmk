@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1765338600.32011 "main.aux" "main.bbl" "main" 1765338781.58811 0
+["bibtex main"] 1765338600.32011 "main.aux" "main.bbl" "main" 1765339249.88784 0
   "./refs.bib" 1765337616.48085 4182 3c5a84fce57dfea4f920ce78e1cf4fba ""
   "/usr/share/texmf-dist/bibtex/bst/base/plain.bst" 1755987285 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1765338781.47041 2621 35c7c9335421c773abd7fd5175fa2fe0 "pdflatex"
+  "main.aux" 1765339249.77219 2621 35c7c9335421c773abd7fd5175fa2fe0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1765338780.92318 "/home/empty/Data/Data/Coursework/657/StateDistil/Report/main.tex" "main.pdf" "main" 1765338781.5884 0
+["pdflatex"] 1765339249.12681 "/home/empty/Data/Data/Coursework/657/StateDistil/Report/main.tex" "main.pdf" "main" 1765339249.88806 0
   "/home/empty/Data/Data/Coursework/657/StateDistil/Report/main.tex" 1765338598.767 3537 9f960f392cda8ead4e164a058bf528be ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1755987285 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1755987285 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -242,13 +242,13 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763442144 2686926 77f27ce2a5465d02a063903ca7e78838 ""
   "Sections/abstract.tex" 1765338726.29759 2652 b60a73a4240fb93c7f4a7bfa9205fef3 ""
   "Sections/approach.tex" 1765338780.82273 1147 60d26851aae553fd0623ef0948006be3 ""
-  "Sections/better.tex" 1765337616.47974 2058 6a0b4b09b3ed67655dd8b577ed219a8e ""
+  "Sections/better.tex" 1765339249.03229 1960 0eda4704a760933185252d596791ddee ""
   "Sections/contributions.tex" 1765337616.47998 663 ae457177012ff3eabc393e7ca81ece7d ""
   "Sections/hypothesis.tex" 1765330107.96443 558 4259a874a1e032d3bbf872ec187df9c9 ""
   "Sections/resultswww.tex" 1765337616.48026 1287 1e0b85b1a73546aac5bcb86760f0ad08 ""
-  "main.aux" 1765338781.47041 2621 35c7c9335421c773abd7fd5175fa2fe0 "pdflatex"
+  "main.aux" 1765339249.77219 2621 35c7c9335421c773abd7fd5175fa2fe0 "pdflatex"
   "main.bbl" 1765338600.35607 2370 7a5b93846b6f95716f40f1e01b0029b9 "bibtex main"
-  "main.out" 1765338781.47084 1241 ba50ed19d039b0ccda7b4edcd51f3ba9 "pdflatex"
+  "main.out" 1765339249.77265 1241 ba50ed19d039b0ccda7b4edcd51f3ba9 "pdflatex"
   "main.tex" 1765338598.767 3537 9f960f392cda8ead4e164a058bf528be ""
   (generated)
   "main.aux"
