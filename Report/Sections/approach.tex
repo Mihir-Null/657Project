@@ -1,0 +1,33 @@
+\section{\textbf{Approach}} \label{sec approach} 
+The following describes the distillation algorithm:  
+\begin{algorithm2e}
+\caption{Distillation$(H_X, z_{\log}, w_{\max})$}
+\textbf{Input:} $H_X$ X-stabilizer matrix, $z_{\log}$ logical $Z$ vector, maximum weight $w_{\max}$ \\
+\textbf{Output: } $w_{\min}$ (harmful undetected weight), $A_{w_{\min}}$ (multiplicity) \\[4pt]
+
+$w_{\min} \gets \text{None}$
+$A_{w_{\min}} \gets 0$
+
+\For{$w \in \{1, \ldots, w_{\max}\}$}{
+  $\text{\textsc{found}} \gets \text{False}$ \\
+  \For{each subset $S \subseteq \{1,\dots,n\}$ with $|S| = w$}{
+    Construct $e \in \{0,1\}^n$ by setting $e_i = 1$ iff $i \in S$
+    \If{$H_X e^T = 0$}{ 
+      \If{$z_{\log} \cdot e = 1$}{
+        $\textsc{found} \gets \text{True}$ \\
+        \If{$w_{\min} = \text{None}$}{
+          $w_{\min} \gets w$\\ 
+          $A_{w_{\min}} \gets 1$
+        }
+        \ElseIf{$w = w_{\min}$}{
+          $A_{w_{\min}} \gets A_{w_{\min}} + 1$
+        }
+      }
+    }
+  }
+  \If{\textsc{found}}{
+    \textbf{break}
+  }
+}
+\end{algorithm2e}
+\newpage
