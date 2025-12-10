@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1765330091.84626 "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" "presentation.pdf" "presentation" 1765330092.98505 2
-  "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" 1765330090.46077 11934 73c43b9302cee03046bde4257cca293c ""
+["pdflatex"] 1765330652.32301 "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" "presentation.pdf" "presentation" 1765330653.58685 0
+  "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" 1765330652.22376 11782 9e9508f943f327a761bee097b9cd4666 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1755987285 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1755987285 1536 293044035fd171bb1d18cf655049b101 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1755987285 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
@@ -20,6 +20,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm" 1755987285 1316 b636689f1933f24d1294acdf6041daaa ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1755987285 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm" 1755987285 1296 d77f431d10d47c8ea2cc18cf45346274 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmss9.tfm" 1755987285 1320 49357c421c0d469f88b867dd0c3d10e8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm" 1755987285 1272 e2d13f0df30bf3ad990bb9d028e37f34 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1755987285 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1755987285 1116 933a60c408fc0a863a92debe84b2d294 ""
@@ -32,6 +33,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1755987285 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb" 1755987285 24393 3b7eb51a67a0a62aec5849271bdb9c2e ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb" 1755987285 24420 52dbb8e8aa0069a1b987309557f8d303 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb" 1755987285 24373 a91d375736817a75026663adcb2190c1 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb" 1755987285 28902 2f5c04fd2884d1878057baa5aad22765 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb" 1755987285 25150 e0d09798d232ab9d00c5c0a8df6cc22d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb" 1755987285 25168 33771b85f45c82138dd7745db7092d1c ""
@@ -223,11 +225,12 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763442144 2686926 77f27ce2a5465d02a063903ca7e78838 ""
   "CnotTransversal.png" 1765323349.36029 27539 bcc2b4bf318c864b73781e9c16eaffd3 ""
   "ScreenshotCodes.png" 1764701644.81063 154499 07d155c6a169ec1f2414251560084b61 ""
-  "presentation.aux" 1765330092.91936 9425 7fad567cc09ae7c86ebe4621bd86c394 "pdflatex"
-  "presentation.nav" 1765330092.92065 5877 6d26971c5ea256091df17f3adadbc89b "pdflatex"
-  "presentation.out" 1765330092.9203 2402 e7425744e5644a8a36883a3b6bb82061 "pdflatex"
-  "presentation.tex" 1765330090.46077 11934 73c43b9302cee03046bde4257cca293c ""
-  "presentation.toc" 1765330092.92068 1045 6a85f7c29becbe130f7e28f9ec60accc "pdflatex"
+  "image.png" 1765329987.59428 79666 f6e76872132cf371a8db467101c067c2 ""
+  "presentation.aux" 1765330653.51692 9425 7fad567cc09ae7c86ebe4621bd86c394 "pdflatex"
+  "presentation.nav" 1765330653.51811 5877 6d26971c5ea256091df17f3adadbc89b "pdflatex"
+  "presentation.out" 1765330653.51783 2402 e7425744e5644a8a36883a3b6bb82061 "pdflatex"
+  "presentation.tex" 1765330652.22376 11782 9e9508f943f327a761bee097b9cd4666 ""
+  "presentation.toc" 1765330653.51812 1045 6a85f7c29becbe130f7e28f9ec60accc "pdflatex"
   (generated)
   "presentation.aux"
   "presentation.log"

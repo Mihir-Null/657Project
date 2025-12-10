@@ -274,7 +274,7 @@ $$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
 \section{Simulation}
 
 \subsection{Algorithm}
-\begin{frame}{Algorithm Overview \; [WIP]}
+\begin{frame}{Algorithm Overview}
   \begin{itemize}
     \item For each code:
       \begin{enumerate}
@@ -291,27 +291,21 @@ $$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
       \quad 
       Y = \frac{s(p)}{n}
       \]
-      \end{itemize}
   \end{itemize}
 \end{frame}
 
 \subsection{Results}
-\begin{frame}{Pretty Graphs \; [WIP]}
-  
-  \end{itemize}
+\begin{frame}{Pretty Graphs}
+   \centering
+  \includegraphics[width=0.7\textwidth]{image.png}
 \end{frame}
 
 \subsection{Analysis}
 \begin{frame}{Contextualizing Results}
   \begin{itemize}
     \item TE* codes show strong suppression at small physical error rates.
-    \item The leading term $p^\alpha$ matches $\alpha \approx d_Z \sim \sqrt{n}$.
-    \item Relative to BH triorthogonal codes:
-      \begin{itemize}
-        \item Better small-$n$ distillation efficiency,
-        \item Comparable acceptance rates,
-        \item Similar eventual asymptotic trends.
-      \end{itemize}
+    \item Further analysis would require simulation at higher block lengths
+    \item Initial tests consistent with the hypothesis practical yield at low $n$
     \item Suggests QR-based TE* codes offer a \textbf{practical},
           not asymptotic, advantage.
   \end{itemize}
@@ -322,7 +316,7 @@ $$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
 \begin{frame}{Hypothesis vs Results}
   \begin{itemize}
     \item Hypothesis: QR-based TE* codes outperform BH codes for realistic block sizes.
-    \item Preliminary simulations: \textbf{Confirmed}.
+    \item Preliminary simulations seem to support this.
     \item Strengths:
       \begin{itemize}
         \item High $d$ for small $n$,
