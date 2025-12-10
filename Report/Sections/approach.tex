@@ -9,12 +9,12 @@ $w_{\min} \gets \text{None}$
 $A_{w_{\min}} \gets 0$
 
 \For{$w \in \{1, \ldots, w_{\max}\}$}{
-  $\text{\textsc{found}} \gets \text{False}$
+  $\text{\textsc{found}} \gets \text{False}$ \\
   \For{each subset $S \subseteq \{1,\dots,n\}$ with $|S| = w$}{
     Construct $e \in \{0,1\}^n$ by setting $e_i = 1$ iff $i \in S$
     \If{$H_X e^T = 0$}{ 
       \If{$z_{\log} \cdot e = 1$}{
-        $\text{found\_this\_weight} \gets \text{True}$ \\
+        $\textsc{found} \gets \text{True}$ \\
         \If{$w_{\min} = \text{None}$}{
           $w_{\min} \gets w$\\ 
           $A_{w_{\min}} \gets 1$
@@ -29,6 +29,5 @@ $A_{w_{\min}} \gets 0$
     \textbf{break}
   }
 }
-
 \end{algorithm2e}
 \newpage
