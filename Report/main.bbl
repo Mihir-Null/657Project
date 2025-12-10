@@ -1,0 +1,68 @@
+\begin{thebibliography}{10}
+
+\bibitem{LowOverheadQutrit2024}
+Low overhead qutrit magic state distillation, 2024.
+\newblock arXiv preprint.
+
+\bibitem{BravyiHaah2012PRA}
+Sergey Bravyi and Jeongwan Haah.
+\newblock Magic-state distillation with low overhead.
+\newblock {\em Physical Review A}, 86(5):052329, 2012.
+
+\bibitem{Campbell2012PRX}
+Earl~T. Campbell, Hussain Anwar, and Dan~E. Browne.
+\newblock Magic-state distillation in all prime dimensions using quantum reed--muller codes.
+\newblock {\em Physical Review X}, 2(4):041021, 2012.
+
+\bibitem{CampbellHoward2017PRA}
+Earl~T. Campbell and Mark Howard.
+\newblock Unified framework for magic state distillation and multiqubit gate synthesis with reduced resource cost.
+\newblock {\em Physical Review A}, 95(2):022316, 2017.
+
+\bibitem{Cui2016Clifford}
+Shuxiang Cui, Daniel Gottesman, and Anurag Krishna.
+\newblock Diagonal gates in the clifford hierarchy, August 2016.
+\newblock arXiv preprint.
+
+\bibitem{deSilva2025Clifford}
+Nuwan de~Silva and Oliver Lautsch.
+\newblock The clifford hierarchy for one qubit or qudit, January 2025.
+\newblock arXiv preprint.
+
+\bibitem{ECZooStab1513}
+{Error Correction Zoo}.
+\newblock [[15,1,3]] stabilizer code, 2024.
+\newblock Online reference.
+
+\bibitem{ECZooStab4915}
+{Error Correction Zoo}.
+\newblock [[49,1,5]] stabilizer code, 2024.
+\newblock Online reference.
+
+\bibitem{BoulderSchool2023}
+Boulder~School for Condensed~Matter and Materials Physics.
+\newblock Boulder school 2023 lecture notes, 2023.
+\newblock Lecture series, Yale University.
+
+\bibitem{Gottesman2024QECC}
+Daniel Gottesman.
+\newblock Surviving as a quantum computer in a classical world: Chapters 1--15, May 2024.
+\newblock Lecture notes/book draft, CMSC 858G, University of Maryland.
+
+\bibitem{GottesmanYoshida2018}
+Daniel Gottesman and Beni Yoshida.
+\newblock Quantum error correction and fault tolerance, 2018.
+\newblock Course materials, Perimeter Institute.
+
+\bibitem{JainAlbert2025}
+S.~P. Jain and Victor~V. Albert.
+\newblock Transversal clifford and t-gate codes of short length and high distance.
+\newblock {\em IEEE Journal on Selected Areas in Information Theory}, 6:127--137, 2025.
+
+\bibitem{Prakash2020Golay}
+Shiroman Prakash.
+\newblock Magic state distillation with the ternary golay code.
+\newblock {\em Proceedings of the Royal Society A}, 476(2243), 2020.
+\newblock PMC7544352.
+
+\end{thebibliography}
