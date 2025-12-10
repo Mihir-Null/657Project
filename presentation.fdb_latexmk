@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1765319718.13737 "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" "presentation.pdf" "presentation" 1765319719.21727 0
-  "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" 1765319718.02753 11037 a61311fc075d9f7a6c85c23583a13667 ""
+["pdflatex"] 1765324559.32784 "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" "presentation.pdf" "presentation" 1765324560.45421 0
+  "/home/empty/Data/Data/Coursework/657/StateDistil/presentation.tex" 1765324558.07353 12687 af47eeb6573e15b336ac86571e3b18cb ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1755987285 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1755987285 1536 293044035fd171bb1d18cf655049b101 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss1095.tfm" 1755987285 1536 f0fa079cdc83a6ffeda21e42352cf1ea ""
@@ -223,11 +223,13 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763442072 5306876 69c328245ae101f6bc10b01e1f2bf9d5 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763442144 2686926 77f27ce2a5465d02a063903ca7e78838 ""
-  "presentation.aux" 1765319719.14698 8450 c8da3c7a018a59185d82e38e2a29e5e4 "pdflatex"
-  "presentation.nav" 1765319719.14824 5194 ec2f7b9a18f01286db84b82987ea425d "pdflatex"
-  "presentation.out" 1765319719.14789 2265 f1441e34faec7260d12f5f41405da77c "pdflatex"
-  "presentation.tex" 1765319718.02753 11037 a61311fc075d9f7a6c85c23583a13667 ""
-  "presentation.toc" 1765319719.14827 987 0568ce577fbe203900cbd0540c8ac1bf "pdflatex"
+  "CnotTransversal.png" 1765323349.36029 27539 bcc2b4bf318c864b73781e9c16eaffd3 ""
+  "ScreenshotCodes.png" 1764701644.81063 154499 07d155c6a169ec1f2414251560084b61 ""
+  "presentation.aux" 1765324560.39621 9425 7fad567cc09ae7c86ebe4621bd86c394 "pdflatex"
+  "presentation.nav" 1765324560.39758 5877 6d26971c5ea256091df17f3adadbc89b "pdflatex"
+  "presentation.out" 1765324560.39723 2402 e7425744e5644a8a36883a3b6bb82061 "pdflatex"
+  "presentation.tex" 1765324558.07353 12687 af47eeb6573e15b336ac86571e3b18cb ""
+  "presentation.toc" 1765324560.39761 1045 6a85f7c29becbe130f7e28f9ec60accc "pdflatex"
   (generated)
   "presentation.aux"
   "presentation.log"

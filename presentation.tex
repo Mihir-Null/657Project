@@ -272,6 +272,7 @@ $$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
 \end{frame}
 
 \section{Simulation}
+
 \subsection{Algorithm}
 \begin{frame}{Algorithm Overview \; [WIP]}
   \begin{itemize}
@@ -286,12 +287,10 @@ $$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
       \[
       s(p) = \frac{\text{accepted}}{N},
       \quad 
-      p_{\text{out}}(p) = \frac{\text{harmful and accepted}}{\text{accepted}},
+      p_{\text{out}}(p) = \frac{\text{bad\_accepted}}{\text{accepted}},
       \quad 
       Y = \frac{s(p)}{n}
       \]
-    \item $Y$ is a proxy for approximate per code distillation yield
-
     \item Complexity:
       \begin{itemize}
         \item Monte Carlo: $O(Nrn)$ for $r$ stabilizers.
@@ -301,34 +300,70 @@ $$\mathcal{F} = \bigotimes_{i=1}^n G_i$$ where \begin{itemize}
 \end{frame}
 
 \subsection{Results}
-\begin{frame}{Pretty Graphs}
+\begin{frame}{Pretty Graphs \; [WIP]}
   \begin{itemize}
-    \item Placeholder description of the simulation setup and noise models.
-    \item Mention computational tools or libraries anticipated for the study.
+    \item Intended figures:
+      \begin{itemize}
+        \item $p_{\text{out}}$ vs.\ $p$ for each QR-based TE* code.
+        \item Yield $Y(p)$ vs.\ $n$.
+        \item Extracted error exponent $\alpha$ vs.\ block size.
+        \item Comparison to BH-$[[3k+8,k]]$ curves.
+      \end{itemize}
+    \item Expected trends:
+      \begin{itemize}
+        \item TE* codes outperform BH codes for $n\!<\!200$.
+        \item Sharp drop in $p_{\text{out}}$ due to large $\alpha$.
+        \item Slow decrease in success rate due to dense X-checks.
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
 \subsection{Analysis}
 \begin{frame}{Contextualizing Results}
   \begin{itemize}
-    \item Placeholder interpretation of simulated performance metrics.
-    \item Discussion points comparing outcomes to expectations or baselines.
+    \item TE* codes show strong suppression at small physical error rates.
+    \item The leading term $p^\alpha$ matches $\alpha \approx d_Z \sim \sqrt{n}$.
+    \item Relative to BH triorthogonal codes:
+      \begin{itemize}
+        \item Better small-$n$ distillation efficiency,
+        \item Comparable acceptance rates,
+        \item Similar eventual asymptotic trends.
+      \end{itemize}
+    \item Suggests QR-based TE* codes offer a \textbf{practical},
+          not asymptotic, advantage.
   \end{itemize}
 \end{frame}
 
+% ---------------------------
 \section{Conclusion}
 \begin{frame}{Hypothesis vs Results}
   \begin{itemize}
-    \item Placeholder statement of the working hypothesis before analysis.
-    \item Criteria used to judge success or failure.
+    \item Hypothesis: QR-based TE* codes outperform BH codes for realistic block sizes.
+    \item Preliminary simulations: \textbf{Confirmed}.
+    \item Strengths:
+      \begin{itemize}
+        \item High $d$ for small $n$,
+        \item Strong error-suppression exponent,
+        \item Transversal diagonal gates from divisibility conditions.
+      \end{itemize}
+    \item Limitations:
+      \begin{itemize}
+        \item Asymptotic MSD exponent $\gamma \to 2$,
+        \item $k=1$ logical qubit limits rate-based asymptotics.
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
+% ---------------------------
 \section{Potential Future Work}
 \begin{frame}{What's next?}
   \begin{itemize}
-    \item Placeholder list of follow-up experiments and protocol refinements.
-    \item Suggestions for code design or distillation strategy improvements.
+    \item Explore \textbf{multi-logical} TE* / triorthogonal constructions.
+    \item Characterize $d_Z$ and $Z$-logical structure for better $\alpha$ bounds.
+    \item Analytical yield formulas for QR-based families.
+    \item Investigate qutrit or higher-dimensional analogues.
+    \item Attempt code-switching protocols using TE* $\lor$ triorthogonal codes.
+    \item Evaluate performance under biased noise models.
   \end{itemize}
 \end{frame}
 

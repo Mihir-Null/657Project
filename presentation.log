@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.18)  9 DEC 2025 17:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.18)  9 DEC 2025 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -799,6 +799,10 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 [2
 
 ] (./presentation.toc) (./presentation.toc)
+Overfull \vbox (12.33482pt too high) detected at line 24
+ []
+
+
 
 [3
 
@@ -819,10 +823,20 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 [7
 
 ]
+<CnotTransversal.png, id=170, 588.1975pt x 672.5125pt>
+File: CnotTransversal.png Graphic file (type png)
+<use CnotTransversal.png>
+Package pdftex.def Info: CnotTransversal.png  used on input line 68.
+(pdftex.def)             Requested size: 176.4606pt x 201.7553pt.
+
+Overfull \vbox (15.0812pt too high) detected at line 68
+ []
+
+
 
 [8
 
-]
+ <./CnotTransversal.png>]
 
 [9
 
@@ -851,18 +865,24 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 [15
 
 ]
+<ScreenshotCodes.png, id=216, 580.1675pt x 567.11874pt>
+File: ScreenshotCodes.png Graphic file (type png)
+<use ScreenshotCodes.png>
+Package pdftex.def Info: ScreenshotCodes.png  used on input line 164.
+(pdftex.def)             Requested size: 232.06288pt x 226.84348pt.
+
+Overfull \vbox (40.16939pt too high) detected at line 164
+ []
+
+
 
 [16
 
-]
+ <./ScreenshotCodes.png>]
 
 [17
 
 ]
-Overfull \vbox (22.13416pt too high) detected at line 222
- []
-
-
 
 [18
 
@@ -883,6 +903,10 @@ Overfull \vbox (22.13416pt too high) detected at line 222
 [22
 
 ]
+Overfull \vbox (22.13416pt too high) detected at line 272
+ []
+
+
 
 [23
 
@@ -897,6 +921,26 @@ Overfull \vbox (22.13416pt too high) detected at line 222
 ]
 
 [26
+
+]
+
+[27
+
+]
+
+[28
+
+]
+
+[29
+
+]
+
+[30
+
+]
+
+[31
 
 ]
 \tf@nav=\write6
@@ -914,21 +958,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: F1441E34FAEC7260D12F5F41405DA77C;2265.
+(rerunfilecheck)             Checksum: E7425744E5644A8A36883A3B6BB82061;2402.
  ) 
 Here is how much of TeX's memory you used:
- 25337 strings out of 475171
- 504899 string characters out of 5767094
+ 25377 strings out of 475171
+ 505554 string characters out of 5767094
  858836 words of memory out of 5000000
- 47752 multiletter control sequences out of 15000+600000
- 571856 words of font info for 82 fonts, out of 8000000 for 9000
+ 47781 multiletter control sequences out of 15000+600000
+ 571562 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  128i,13n,123p,1928b,756s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb>
-Output written on presentation.pdf (26 pages, 172140 bytes).
+Output written on presentation.pdf (31 pages, 282613 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 71 named destinations out of 1000 (max. 500000)
- 187 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 381 PDF objects out of 1000 (max. 8388607)
+ 304 compressed objects within 4 object streams
+ 82 named destinations out of 1000 (max. 500000)
+ 205 words of extra memory for PDF output out of 10000 (max. 10000000)
 
