@@ -1,0 +1,10 @@
+\section{\textbf{Potential Improvements}} \label{imp}
+\par In this project, we focused exclusively on analyzing magic state distillation using the standard Bravyi--Haah protocol applied to weakly triply-even and related CSS code constructions. While this framework is well-established and provides a concrete mathematical baseline for evaluating distillation performance, it does not reflect the most resource-efficient protocols currently available.
+
+\par Our results likely underestimate the achievable performance of the code families we studied given that we only performed the Bravyi-Haah Protocol. More recent distillation approaches incorporate additional circuit optimizations, adaptive measurement strategies, and correlated error handling that can lead to substantially improved overhead and performance. A major direction for improvement would be to implement a Monte Carlo based distillation simulation framework, rather than relying purely on Bravyi-Haah-style assumptions.
+
+\par Such a simulation framework would make it possible to directly estimate acceptance probabilities, conditional logical error rates, and overall yield under realistic stochastic noise models. This would enable direct benchmarking of our doubled QR and weakly triply-even constructions against modern state-of-the-art distillation schemes under practical operating conditions.
+
+\par Finally, our analysis assumed idealized conditions, including perfect Clifford operations and noiseless measurements. A natural extension would be to incorporate circuit-level noise models and study how error correlations propagate across multiple rounds of distillation. This would significantly strengthen the practical relevance of our results for near-term fault-tolerant quantum computing.
+
+\par Ultimately, the most important direction for future improvement is the implementation of more efficient and realistic distillation protocols -- particularly Monte Carlo -- based and multi-round simulation strategies -- to obtain tighter, experimentally relevant performance estimates.
