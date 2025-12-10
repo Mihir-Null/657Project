@@ -9,6 +9,7 @@ from typing import Dict, Tuple, List
 #    (used to go from C1, C2 -> stabilizers + logicals)
 # ============================================================
 
+
 def gf2_rref(A: np.ndarray) -> Tuple[np.ndarray, List[int]]:
     """
     Row-reduced echelon form over GF(2).
@@ -336,58 +337,154 @@ def sample_block(
 #    Replace this with your actual QR / TE* / triorthogonal codes.
 # ============================================================
 
-def get_example_codes() -> Dict[str, DistillationCode]:
+def distillation_code_from_triorthogonal(
+    G: np.ndarray,
+    name: str
+) -> DistillationCode:
     """
-    Define one or more example codes by providing classical C1, C2.
-    In your actual workflow, you'll:
-      - construct C1, C2 from your QR / TE* / triorthogonal recipes
-        (as in Jain–Albert),
-      - call build_css_T_from_C1_C2(C1, C2),
-      - then wrap HX and Z_logicals[0] into DistillationCode.
+    Given a triorthogonal matrix G (rows in GF(2)^n):
+      - exactly one odd-weight row (logical X),
+      - all other rows even-weight (X-stabilizers),
 
-    Below is a tiny toy example using a simple [[3,1,1]]-style CSS
-    (not a good distillation code, purely for structure demonstration).
+    construct the CSS-T code CSS(X, C2; Z, C1⊥) with:
+      C1 = rowspace(G)
+      C2 = rowspace(G_even)
+
+    and return a DistillationCode storing:
+      - HX      (X-stabilizers),
+      - z_log   (one logical Z),
+      - k       (should be 1).
     """
-
-    # --- Toy example classical codes ---
-    # C2 ⊂ C1 ⊂ C2⊥, k = dim(C1) - dim(C2) = 1
-    # Here we just hand-pick something over 3 bits:
-
-    # C2: span{ 111 }  (X-stabilizer space)
-    C2 = np.array([[1, 1, 1]], dtype=np.uint8)
-
-    # C1: span{ 111, 100 }  (extends C2 by one extra generator)
-    C1 = np.array([
-        [1, 0, 0],
-        [1, 1, 1],
-    ], dtype=np.uint8)
+    G = (G.astype(np.uint8) & 1)
+    # identify even rows (C2) and all rows (C1)
+    weights = G.sum(axis=1) % 2
+    even_rows = (weights == 0)
+    if not np.any(~even_rows):
+        raise ValueError("G must have at least one odd-weight row for logical X.")
+    C1 = G
+    C2 = G[even_rows, :]
 
     css = build_css_T_from_C1_C2(C1, C2)
-    # css.HX: X-stabilizers
-    # css.Z_logicals[0]: logical Z
 
-    toy_code = DistillationCode(
-        name="Toy CSS (n=3)",
+    return DistillationCode(
+        name=name,
         HX=css.HX,
         z_log=css.Z_logicals[0],
         k=css.k
     )
 
-    # In your actual use, something like:
-    # C1_QR, C2_QR = <build from functions.py / Magma / Jain-Albert recipe>
-    # css_QR = build_css_T_from_C1_C2(C1_QR, C2_QR)
-    # code_QR = DistillationCode(
-    #     name="QR-based TE* [[n,1,d]]",
-    #     HX=css_QR.HX,
-    #     z_log=css_QR.Z_logicals[0],
-    #     k=1
-    # )
 
-    return {
-        toy_code.name: toy_code,
-        # "QR-based TE* (n=..., d=...)": code_QR,
-        # etc.
-    }
+
+
+def get_example_codes() -> Dict[str, DistillationCode]:
+    """
+    Define distillation codes using triorthogonal generators G.
+
+    For each triorthogonal matrix G:
+      - C1 = rowspace(G)
+      - C2 = rowspace(G_even) (all even-weight rows of G)
+    which satisfies C2 ⊂ C1 ⊂ C2⊥ for a triorthogonal matrix.
+
+    Then we wrap into DistillationCode with:
+      HX      = css.HX  (X-stabilizers)
+      z_log   = css.Z_logicals[0]  (one logical Z)
+      k       = css.k   (should be 1)
+    """
+
+    codes: Dict[str, DistillationCode] = {}
+
+    # ============================================================
+    # 1. [[15,1,3]] Bravyi–Haah triorthogonal code
+    # ============================================================
+
+    G15 = np.array([
+        # odd-weight row (logical X)
+        [0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+        # even-weight rows (X-stabilizers)
+        [1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1],
+        [0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1],
+        [0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1],
+    ], dtype=np.uint8)
+
+    code_15 = distillation_code_from_triorthogonal(
+        G15, name="BH [[15,1,3]]"
+    )
+    codes[code_15.name] = code_15
+
+    # ============================================================
+    # 2. [[49,1,5]] Bravyi–Haah triorthogonal code
+    #    G49 = [odd row] ⊕ G0_49 (13 even rows)
+    # ============================================================
+
+    rows_49_even = [
+        # 13 even-weight rows (triply-even stabilizers)
+        "1111111111111110101010101010101010101010101010101",
+        "0000000000000000000111100110011000011001100110011",
+        "0000000000000001100000011001100110000000000000000",
+        "0000000000000000000000000000000001111000000001111",
+        "0000000000000000011110000000000000000111100000000",
+        "0000000000000000000001111000011110000000000000000",
+        "0000000000000000000000000111111110000000000000000",
+        "0000000000000000000000000000000001111111100000000",
+        "0000000000000000000000000000000000000000011111111",
+        "1010101010101010000000000000000000000000000000000",
+        "0110011001100110000000000000000000000000000000000",
+        "0001111000011110000000000000000000000000000000000",
+        "0000000111111110000000000000000000000000000000000",
+    ]
+
+    G0_49 = np.array(
+        [[int(c) for c in row] for row in rows_49_even],
+        dtype=np.uint8
+    )
+
+    # Add one odd-weight row (all ones) as logical X
+    G49 = np.vstack([
+        np.ones(49, dtype=np.uint8),  # odd row
+        G0_49                         # 13 even rows
+    ])
+
+    code_49 = distillation_code_from_triorthogonal(
+        G49, name="BH [[49,1,5]]"
+    )
+    codes[code_49.name] = code_49
+
+    # ============================================================
+    # 3. [[95,1,7]] triorthogonal doubled-Golay code (Sullivan)
+    # ============================================================
+    # Here you need to provide a concrete triorthogonal generator matrix G95
+    # as a list of 0/1 strings of length 95, with:
+    #   - exactly one odd-weight row (logical X),
+    #   - all other rows even-weight (X-stabilizers),
+    # and satisfying triorthogonality.
+    #
+    # You can take these rows from your own implementation of the
+    # doubling construction (Golay + [[49,1,5]]) or transcribe them
+    # from Sullivan's block matrix (16) once you've expanded it.
+    #
+
+    rows_95_tri = [
+        # EXAMPLE PLACEHOLDER:
+        # "1010...95 bits...",
+        # "0101...95 bits...",
+        # ...
+        # Replace the lines above with the actual 0/1 rows of your
+        # [[95,1,7]] triorthogonal generator matrix.
+    ]
+
+    if len(rows_95_tri) > 0:
+        G95 = np.array(
+            [[int(c) for c in row] for row in rows_95_tri],
+            dtype=np.uint8
+        )
+        code_95 = distillation_code_from_triorthogonal(
+            G95, name="Doubled-Golay [[95,1,7]]"
+        )
+        codes[code_95.name] = code_95
+
+    return codes
+
 
 
 # ============================================================
@@ -484,17 +581,14 @@ def run_distillation_experiments(
 # ============================================================
 
 if __name__ == "__main__":
-    # Physical error grid (tune as needed)
     p_values = [1e-2, 5e-3, 1e-3, 5e-4, 1e-4]
 
-    # Get your codes (replace toy with your QR / TE* ones)
     codes = get_example_codes()
 
-    # Run and plot
     results = run_distillation_experiments(
         codes=codes,
         p_values=p_values,
-        N=50_000,        # increase for smoother curves
+        N=50_000,
         estimate_alpha=True,
-        w_max=15         # set >= distance if you know it
+        w_max=15
     )
