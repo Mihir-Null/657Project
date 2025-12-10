@@ -581,7 +581,7 @@ def run_distillation_experiments(
 # ============================================================
 
 if __name__ == "__main__":
-    p_values = [1e-2, 5e-3, 1e-3, 5e-4, 1e-4]
+    p_values = [1e-2, 1e-3, 1e-4, 1e-5, 1e-6, 1e-7, 1e-8, 1e-9]
 
     codes = get_example_codes()
 
